@@ -175,6 +175,7 @@ Available options:
         -l` output fields. See
         [fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
         for more info
++ `-F`: list objects representing each file as directory, file and symbolic links        
 
 Examples:
 
@@ -183,6 +184,7 @@ ls('projs/*.js');
 ls('-R', '/users/me', '/tmp');
 ls('-R', ['/users/me', '/tmp']); // same as above
 ls('-l', 'file.txt'); // { name: 'file.txt', mode: 33188, nlink: 1, ...}
+ls('-F', '/users/me'); // ['directory/','file*','symbolic_link@']
 ```
 
 Returns array of files in the given path, or in current directory if no path provided.
